@@ -2,6 +2,28 @@
 <html >
 
 <head>
+  <style>
+     body {
+      margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-image: url('IMG20240331162217.jpg'); 
+    background-size: cover;
+
+            
+  button:hover {
+    background-color: #45a049;
+    cursor: pointer;
+    border: none; background-color: #4CAF50; color: white; padding: 10px 20px; text-align: center; text-decoration: none; display: inline-block; font-size: 16px; margin: 4px 2px; transition-duration: 0.4s; cursor: pointer; border-radius: 12px;
+  }
+  ::placeholder {
+  color: rgb(15, 15, 15);
+  opacity: 1; /* Firefox */
+}
+
+
+        }
+  </style>
   <meta charset="UTF-8">
   <title>ML API</title>
   <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
@@ -14,27 +36,34 @@
 
 <body>
  <div class="login">
+  <div style="text-align:center;">
 	<h1>Boston House Price Prediction</h1>
+  </div>
 
      <!-- Main Input For Receiving Query to our ML -->
     <form action="{{ url_for('predict')}}"method="post">
-      <input type="text" name="CRIM" placeholder="CRIM" required="required" /><br>
-    	<input type="text" name="ZN" placeholder="ZN" required="required" /><br>
-        <input type="text" name="INDUS" placeholder="INDUS" required="required" /><br>
-        <input type="text" name="CHAS" placeholder="CHAS" required="required" /><br>
-        <input type="text" name="NOX" placeholder="NOX" required="required" /><br>
-        <input type="text" name="RM" placeholder="RM" required="required" /><br>
-        <input type="text" name="Age" placeholder="Age" required="required" /><br>
-        <input type="text" name="DIS" placeholder="DIS" required="required" /><br>
-        <input type="text" name="RAD" placeholder="RAD" required="required" /><br>
-        <input type="text" name="TAX" placeholder="TAX" required="required" /><br>
-        <input type="text" name="PTRATIO" placeholder="PTRATIO" required="required" /><br>
-        <input type="text" name="B" placeholder="B" required="required" /><br>
-        <input type="text" name="LSTAT" placeholder="LSTAT" required="required" /><br>
+      <div style="text-align:center;">
+      <input type="text" name="CRIM" placeholder="Per capita crime rate by town" size ="22" required="required" /><br><br>
+    
+    	<input type="text" name="ZN" placeholder="Proportion of residential land zoned for lots over 25,000 sq.ft." size="50" required="required" /><br><br>
+    
+        <input type="text" name="INDUS" placeholder="Proportion of non-retail business acres per town." size = "40" required="required" /><br><br>
+        <input type="text" name="CHAS" placeholder="Charles River dummy variable (1 if tract bounds river; 0 otherwise)"  size ="55" required="required" /><br><br>
+        <input type="text" name="NOX" placeholder="Citric oxides concentration (parts per 10 million)" size = "40" required="required" /><br><br>
+        <input type="text" name="RM" placeholder="Rverage number of rooms per dwelling" size = "30" required="required" /><br><br>
+        <input type="text" name="Age" placeholder="Proportion of owner-occupied units built prior to 1940" size = "43" required="required" /><br><br>
+        <input type="text" name="DIS" placeholder="Weighted distances to five Boston employment centres"  size = "45"required="required" /><br><br>
+        <input type="text" name="RAD" placeholder="Index of accessibility to radial highways" size = "31" required="required" /><br><br>
+        <input type="text" name="TAX" placeholder="Full-value property-tax rate per $10,000"  size = "32"required="required" /><br><br>
+        <input type="text" name="PTRATIO" placeholder="Pupil-teacher ratio by town" size = "20" required="required" /><br><br>
+        <input type="text" name="B" placeholder="1000(Bk - 0.63)^2 where Bk is the proportion of blacks by town" size = "54" required="required" /><br><br>
+        <input type="text" name="LSTAT" placeholder="% lower status of the population" size = "25" required="required" /><br><br>
 
        
 
         <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+      </div>
+      
     </form>
 
    <br>
@@ -42,7 +71,8 @@
   
    
  </div>
- {{prediction_text}}
+
+  {{prediction_text}}
 
 </body>
 </html>
