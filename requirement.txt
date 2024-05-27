@@ -2,6 +2,6 @@ Flask
 scikit-learn
 pandas
 numpy
-matplotib
+matplotlib
 math
 gunicorn
